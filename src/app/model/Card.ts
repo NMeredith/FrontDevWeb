@@ -1,5 +1,6 @@
 export interface Card {
 id?: number;
+
  name?: string;
   manaCost?: string;
   convertedManaCost?: number;
