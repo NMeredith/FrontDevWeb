@@ -1,7 +1,6 @@
-export interface Card {
-id?: number;
-
- name?: string;
+export interface CardMTG {
+  id?: number;
+  name?: string;
   manaCost?: string;
   convertedManaCost?: number;
   colors?: string;

@@ -2,13 +2,13 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {BehaviorSubject, Observable} from "rxjs";
-import {Card} from "../model/Card";
+import {CardMTG} from "../model/cardMTG";
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class ListCardsService {
+export class ListCardsMTGService {
 
   private cards = new BehaviorSubject<string>('');
 
@@ -39,27 +39,27 @@ export class ListCardsService {
     this.cards.next(data);
   }
 
-  fetch(): Observable<Card[]> {
-    return this.http.get<Card[]>(this.urlServer.allCards);
+  fetch(): Observable<CardMTG[]> {
+    return this.http.get<CardMTG[]>(this.urlServer.allCards);
   }
 
-  search(name: string): Observable<Card[]> {
-    return this.http.get<Card[]>(this.urlServer.filterByName.replace(':name', name));
+  search(name: string): Observable<CardMTG[]> {
+    return this.http.get<CardMTG[]>(this.urlServer.filterByName.replace(':name', name));
   }
 
   delete(id: number): Observable<any> {
     return this.http.delete(this.urlServer.unEmploye.replace(':id', id));
   }
 
-  create(card: Card): Observable<Card> {
-    return this.http.post<Card>(this.urlServer.allCards, card);
+  create(card: CardMTG): Observable<CardMTG> {
+    return this.http.post<CardMTG>(this.urlServer.allCards, card);
   }
 
-  fetchOne(id: number): Observable<Card> {
-    return this.http.get<Card>(this.urlServer.oneCard.replace(':id', id));
+  fetchOne(id: number): Observable<CardMTG> {
+    return this.http.get<CardMTG>(this.urlServer.oneCard.replace(':id', id));
   }
 
-  update(card: Card): Observable<Card> {
-    return this.http.put<Card>(this.urlServer.oneCard.replace(':id', card.id), card);
+  update(card: CardMTG): Observable<CardMTG> {
+    return this.http.put<CardMTG>(this.urlServer.oneCard.replace(':id', card.id), card);
   }
 }
