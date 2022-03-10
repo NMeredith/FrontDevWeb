@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { ListCardMTGComponent } from './list-cardMTG/list-cards.component';
+import { ListCardMTGComponent } from './list-cards/list-cards.component';
+import { FormulaireComponent } from './partage/formulaire/formulaire.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {path:'home', component: HomeComponent},
-  {path:'listCards', component: ListCardMTGComponent}
+  {path:'listCards', component: ListCardMTGComponent},
+  {path:'ajouterCards', component: FormulaireComponent}
 
 ];
 

@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { CardMTG } from '../model/cardMTG';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { ListCardsMTGService } from '../partage/service/list-cardMTG.service';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+  circleIcon = faCircle;
 
-  ngOnInit(): void {
+  card: CardMTG = {};
+
+
+  constructor(private readonly listCardsMTGService:ListCardsMTGService) {
+    //RAS
   }
+
 
 }

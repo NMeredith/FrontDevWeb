@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ListCardsMTGService} from "../service/list-cardMTG.service";
 import { CardMTG } from '../model/cardMTG';
 import {mergeMap} from "rxjs";
 import { faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { MatDialogConfig } from '@angular/material/dialog';
+import { ListCardsMTGService } from '../partage/service/list-cardMTG.service';
 
 @Component({
   selector: 'app-list-cards',
@@ -16,6 +17,7 @@ export class ListCardMTGComponent implements OnInit {
   constructor( private readonly listCardsService: ListCardsMTGService) {
     //Rien à faire ici
   }
+
 
   ngOnInit(): void {
     this.listCardsService.fetch().subscribe(cards => {

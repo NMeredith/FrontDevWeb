@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {environment} from "../../environments/environment";
+import {environment} from "../../../environments/environment";
 import {BehaviorSubject, Observable} from "rxjs";
-import {CardMTG} from "../model/cardMTG";
+import {CardMTG} from "../../model/cardMTG";
 
 
 @Injectable({
@@ -48,7 +48,7 @@ export class ListCardsMTGService {
   }
 
   delete(id: number): Observable<any> {
-    return this.http.delete(this.urlServer.unEmploye.replace(':id', id));
+    return this.http.delete(this.urlServer.oneCard.replace(':id', id));
   }
 
   create(card: CardMTG): Observable<CardMTG> {

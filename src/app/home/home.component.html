@@ -1,1 +1,7 @@
-<p>home works</p>
+<section  *ngIf="card; else noCard">
+  <p>Y a des cartes en base</p>
+</section>
+
+<ng-template #noCard>
+  <span>Aucunes cartes actuellement en base</span>
+</ng-template>
