@@ -3,29 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListCardMTGComponent } from './list-cards/list-cards.component';
+import { CardListComponent } from './card-list/card-list.component';
 import {MatListModule} from "@angular/material/list";
-import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import 'bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { FormulaireComponent } from './partage/formulaire/formulaire.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import { EditComponent } from './edit/edit.component';
-import { ModalComponent } from './modal/modal.component';
+import { CardCreateComponent } from './card-create/card-create.component';
+import { CardDetailsComponent } from './card-details/card-details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListCardMTGComponent,
-    HomeComponent,
-    FormulaireComponent,
-    EditComponent,
-    ModalComponent
+    CardCreateComponent,
+    CardDetailsComponent,
+    CardListComponent
   ],
   imports: [
     HttpClientModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     MatListModule,

@@ -1,4 +1,17 @@
-<div class="container mt-5 mb-5">
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Card List</h4>
+
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let card of cards">
+        {{ card.name }}
+        <button routerLink="/cards/{{ card.id }}">EDIT</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- <div class="container mt-5 mb-5">
   <div class="d-flex justify-content-center row">
       <div class="col-md-10">
           <div *ngFor="let card of cards" class="row p-2 bg-white border rounded">
@@ -16,9 +29,9 @@
               </div>
               <div class="col-md-2 mt-1">
                 <button type="button" class="btn btn-info">Modifier</button>
-                <button type="button" class="btn btn-danger" (click)="delete(card)" (click)="update(card)" >{{card.id}}Supprimer</button>
+                <button type="button" class="btn btn-danger" >Supprimer</button>
             </div>
           </div>
       </div>
     </div>
-</div>
+</div> -->

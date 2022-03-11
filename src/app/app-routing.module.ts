@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ListCardMTGComponent } from './list-cards/list-cards.component';
-import { FormulaireComponent } from './partage/formulaire/formulaire.component';
+import { CardCreateComponent } from './card-create/card-create.component';
+import { CardDetailsComponent } from './card-details/card-details.component';
+import { CardListComponent } from './card-list/card-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  {path:'home', component: HomeComponent},
-  {path:'listCards', component: ListCardMTGComponent},
-  {path:'ajouterCards', component: FormulaireComponent}
+  {path:'cards', component: CardListComponent},
+  {path:'cards/:id', component: CardDetailsComponent},
+  {path:'create', component: CardCreateComponent}
 
 ];
 
