@@ -13,11 +13,34 @@
         />
       </div>
       <div class="form-group">
+        <label for="type-select">Choose a CMC:</label>
+          <select name="type" id="type-select" required>
+            <option value="">--Please choose an option--</option>
+            <option value="cmc0">0</option>
+            <option value="cmc1">1</option>
+            <option value="cmc2">2</option>
+            <option value="cmc3">3</option>
+            <option value="cm4" >4</option>
+            <option value="cmc5">5</option>
+            <option value="cmc6">6</option>
+            <option value="cmc7">7</option>
+            <option value="cmc8">8</option>
+            <option value="cmc9">9</option>
+            <option value="cmc10">10</option>
+            <option value="cmc11">11</option>
+            <option value="cmc12">12</option>
+            <option value="cmc13">13</option>
+            <option value="cmc13">14</option>
+            <option value="cmc14">15</option>
+            <option value="cmc16">16</option>
+          </select>
+
+      </div>
+      <div class="form-group">
         <label for="description">Text</label>
         <input
           class="form-control"
           id="description"
-          required
           [(ngModel)]="card.text"
           name="description"
         />

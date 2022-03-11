@@ -2,15 +2,15 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
-$darkpink: #d83a56;
-$lightpink: #ff616d;
-$green: #66de93;
+$darkbrown: #ad8b73;
+$mediumbrown: #ceab93;
+$lightbrown: #e3caa5;
 $cream: #ffeac9;
 
 $custom-theme-colors: (
-  "darkpink": $darkpink,
-  "lightpink": $lightpink,
-  "green": $green,
+  "darkbrown": $darkbrown,
+  "mediumbrown": $mediumbrown,
+  "lightbrown": $lightbrown,
   "cream": $cream
 );
 

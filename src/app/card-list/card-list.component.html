@@ -1,37 +1,60 @@
-<div class="list row">
-  <div class="col-md-6">
-    <h4>Card List</h4>
-
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let card of cards">
-        {{ card.name }}
-        <button routerLink="/cards/{{ card.id }}">EDIT</button>
-      </li>
-    </ul>
+  <input
+  type="text"
+  class="form-control"
+  placeholder="Search by text"
+  [(ngModel)]="name"
+  />
+  <div class="input-group-append">
+  <button
+  class="btn btn-outline-secondary"
+  type="button"
+  (click)="searchByText()"
+  >
+  Search
+  </button>
   </div>
-</div>
+<div class="container d-flex justify-content-center mt-50">
 
-<!-- <div class="container mt-5 mb-5">
-  <div class="d-flex justify-content-center row">
-      <div class="col-md-10">
-          <div *ngFor="let card of cards" class="row p-2 bg-white border rounded">
-              <div class="col-md-3 mt-1">
-                <img  class="img-fluid img-responsive rounded product-image" src="{{card.imageUrl}}">
-              </div>
-              <div class="col-md-7 mt-1">
-                  <div class="d-flex justify-content-between p-price"><span>{{card.name}}</span><span>{{card.manaCost}}</span></div>
-                       <p class="text-justify">{{card.text}}<br><br></p>
-                  <div class="mt-1 mb-1 spec-1">
-                    <span>{{card.power}}</span>
-                    <span class="dot"></span>
-                    <span>{{card.toughness}}</span>
-                  </div>
-              </div>
-              <div class="col-md-2 mt-1">
-                <button type="button" class="btn btn-info">Modifier</button>
-                <button type="button" class="btn btn-danger" >Supprimer</button>
-            </div>
+  <div class="row">
+    <div *ngFor="let card of cards" class="col-md-4 mt-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-img-actions">
+            <img
+              src="{{ card.imageUrl }}"
+              class="card-img img-fluid"
+              width="98"
+              height="350"
+              alt=""
+            />
           </div>
+        </div>
+        <div class="card-body bg-light text-center">
+          <div class="mb-2">
+            <h6 class="font-weight-semibold mb-2">
+              <a href="#" class="text-default mb-2" data-abc="true">{{
+                card.type
+              }}</a>
+            </h6>
+            <a href="#" class="text-muted" data-abc="true">{{ card.name }}</a>
+          </div>
+          <h3 class="mb-0 font-weight-semibold">{{ card.text }}</h3>
+          <div>
+            <i class="fa fa-star star"></i> <i class="fa fa-star star"></i>
+            <i class="fa fa-star star"></i> <i class="fa fa-star star"></i>
+          </div>
+          <div * class="text-muted mb-3">
+            {{ card.power }} power / {{ card.toughness }} toughness
+          </div>
+          <button
+            type="button"
+            class="btn bg-cart"
+            routerLink="/cards/{{ card.id }}"
+          >
+            <fa-icon [icon]="editIcon"></fa-icon> Edit
+          </button>
+        </div>
       </div>
     </div>
-</div> -->
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { CardMTG } from 'src/app/utils/cardMTG';
+import { CardMTG } from '../utils/cardMTG';
 
 const baseURL = 'http://127.0.0.1:8080/CarteMagic';
 
@@ -9,7 +9,10 @@ const baseURL = 'http://127.0.0.1:8080/CarteMagic';
   providedIn: 'root',
 })
 export class CardService {
-  constructor(private httpClient: HttpClient) {}
+
+
+  constructor(private httpClient: HttpClient) {
+  }
   readAll(): Observable<any> {
     return this.httpClient.get(baseURL);
   }
@@ -30,8 +33,8 @@ export class CardService {
   }
 
   // CORRIGER LA REQUETE
-  searchByName(name: string): Observable<any> {
-    return this.httpClient.get(`${baseURL}/name/${name}`);
+  searchByText(text: string): Observable<any> {
+    return this.httpClient.get(`${baseURL}/text/${text}`);
     }
 
 }

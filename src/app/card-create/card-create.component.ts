@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { CardService } from '../services/card.service'
 import { CardMTG } from '../utils/cardMTG';
 
@@ -10,9 +11,17 @@ import { CardMTG } from '../utils/cardMTG';
 export class CardCreateComponent implements OnInit {
 
   card = {
-    name : '',
-    text: '',
+    name: '',
+    manaCost:'',
+    convertedManaCost: 0,
+    colors:'',
+    type: [],
+    text:'',
+    power:'',
+    toughness:'',
+    imageUrl:''
   }
+
 
   submitted = false;
   constructor(private cardService: CardService) {}
@@ -22,6 +31,7 @@ export class CardCreateComponent implements OnInit {
     const data = {
       name: this.card.name,
       text: this.card.text,
+      imageUrl: this.card.imageUrl='https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=132565&type=card'
     };
     this.cardService.create(data).subscribe(
       (response) => {
@@ -37,7 +47,14 @@ export class CardCreateComponent implements OnInit {
     this.submitted = false;
     this.card = {
       name: '',
-      text: '',
-    };
+      manaCost:'',
+      convertedManaCost: 0,
+      colors:'',
+      type: [],
+      text:'',
+      power:'',
+      toughness:'',
+      imageUrl:'https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=132565&type=card'
+    }
   }
 }

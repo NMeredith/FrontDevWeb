@@ -22,6 +22,18 @@
           name="text"
         />
       </div>
+
+      <div class="form-group">
+        <label for="description">Converted Mana Cost</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentCard.convertedManaCost"
+          name="text"
+        />
+      </div>
+
     </form>
     <button class="badge badge-danger mr-2" (click)="deleteCard()">
       Delete
